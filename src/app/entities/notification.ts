@@ -1,8 +1,10 @@
+import { Content } from './content';
+
 export interface NotificationProps {
   recipientId: string;
-  content: string;
+  content: Content;
   category: string;
-  readAt?: Date | null ;
+  readAt?: Date | null;
   createdAt: Date;
 }
 
@@ -21,11 +23,11 @@ export class Notification {
     return this.props.recipientId;
   }
 
-  public set content(content: string) {
+  public set content(content: Content) {
     this.props.content = content;
   }
 
-  public get content(): string {
+  public get content(): Content {
     return this.props.content;
   }
 
@@ -37,16 +39,15 @@ export class Notification {
     return this.props.category;
   }
 
-  public set readAt(readAt:  Date | null | undefined ) {
+  public set readAt(readAt: Date | null | undefined) {
     this.props.readAt = readAt;
   }
 
-  public get readAt(): Date | null | undefined  {
+  public get readAt(): Date | null | undefined {
     return this.props.readAt;
   }
-  
+
   public get createdAt(): Date {
     return this.props.createdAt;
   }
 }
-
